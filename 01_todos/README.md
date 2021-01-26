@@ -1,4 +1,4 @@
-# study-vue
+# 01_todos
 
 ## Project setup
 ```
