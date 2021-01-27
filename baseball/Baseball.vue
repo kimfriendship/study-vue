@@ -13,7 +13,7 @@
     </form>
     <h2>시도: {{ result.length }}</h2>
     <ul>
-      <li v-for="t in tries">
+      <li v-for="(t, i) in tries" :key="i">
         {{ t.value }}
         <br />
         {{ t.result }}
