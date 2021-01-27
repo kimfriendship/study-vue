@@ -24,23 +24,25 @@
   };
 </script>
 
-<style>
+<style scoped>
   #screen {
     width: 300px;
     height: 300px;
     text-align: center;
+    font-size: 20px;
   }
 
-  #screen .waiting {
+  #screen.waiting {
     background: royalblue;
+    color: white;
   }
 
-  #screen .ready {
+  #screen.ready {
     background: salmon;
     color: white;
   }
 
-  #screen .now {
+  #screen.now {
     background: darkcyan;
   }
 </style>
