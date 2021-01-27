@@ -5,8 +5,15 @@
 </template>
 
 <script>
+Vue.component('username', 'isLoggedIn', {
+  props: {
+    username: String,
+    isLoggedIn: Boolean
+  }
+})
+
 export default {
-  props: ['username']
+  props: ['username', 'isLoggedIn']
 }
 </script>
 
