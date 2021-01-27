@@ -1,27 +1,19 @@
 <template>
   <div>
-    <form v-on:submit.prevent='submitForm'>
-      <div>
-        <label for="">ID: </label>
-        <input id='username' type="text" v-model="username">
-      </div>
-      <div>
-        <label for="">PW: </label>
-        <input id='password' type="password" v-model="password">
-      </div>
-      <button type='submit' v-bind:disabled='!isUsernameValid'>로그인</button>
-    </form>
-    <p v-if='isError'>올바르지 않은 아이디입니다.</p>
-    <p v-if='isUsernameValid'>아이디 형식이 맞습니다.</p>
+    <Header :username='username'></Header>
+    <LoginForm></LoginForm>
   </div>
 </template>
 
 <script>
-function validateEmail(email) {
-  const regexr = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  return regexr.test(String(email).toLowerCase())
-}
+import Header from './components/Header';
+import LoginForm from './components/LoginForm'
+
 export default {
+  components: {
+    Header,
+    LoginForm
+  },
   data() {
     return {
       username: '',
@@ -29,25 +21,11 @@ export default {
       isError: false
     };
   },
-  computed: {
-    isUsernameValid() {
-      return validateEmail(this.username);
-    }
-  },
-  methods: {
-    submitForm() {
-      console.log('submitted');
-      this.isError = true;
-      !this.isError && this.initForm();
-    },
-    initForm() {
-      this.username = '';
-      this.password = '';
-    }
-  }
 }
 </script>
 
 <style>
-
+body {
+  margin: 0;
+}
 </style>
