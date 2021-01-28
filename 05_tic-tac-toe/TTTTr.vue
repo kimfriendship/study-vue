@@ -3,7 +3,6 @@
     <ttt-td
       v-for="(cell, i) in rowData"
       :key="i"
-      :cell="cell"
       :rowIndex="rowIndex"
       :cellIndex="i"
     ></ttt-td>
@@ -14,8 +13,12 @@
   import TTTTd from "./TTTTd";
   export default {
     props: {
-      rowData: Array,
       rowIndex: Number,
+    },
+    computed: {
+      rowData() {
+        return this.$store.state.tableData[this.rowIndex];
+      },
     },
     components: {
       tttTd: TTTTd,

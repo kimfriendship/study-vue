@@ -1,11 +1,6 @@
 <template>
   <table>
-    <ttt-tr
-      v-for="(rowData, i) in tableData"
-      :key="i"
-      :rowData="rowData"
-      :rowIndex="i"
-    ></ttt-tr>
+    <ttt-tr v-for="(_, i) in tableData" :key="i" :rowIndex="i"></ttt-tr>
   </table>
 </template>
 
@@ -13,8 +8,10 @@
   import TTTTr from "./TTTTr";
 
   export default {
-    props: {
-      tableData: Array,
+    computed: {
+      tableData() {
+        return this.$store.state.tableData;
+      },
     },
     components: {
       tttTr: TTTTr,
