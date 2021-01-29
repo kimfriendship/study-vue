@@ -22,6 +22,7 @@
     QUESTION_CELL,
     FLAG_CELL,
     NORMALIZE_CELL,
+    CLICK_MINE,
   } from "./store";
 
   const defaultStyle = {
@@ -36,11 +37,11 @@
 
   export default {
     computed: {
-      ...mapState(["table"]),
+      ...mapState(["table", "halted"]),
       //TODO: 동작 원리 생각 해보기
       cellDataStyle(state) {
         return (row, cell) => {
-          switch (this.$store.state.table[row][cell]) {
+          switch (this.table[row][cell]) {
             case CODE.NORMAL:
             case CODE.MINE:
               return { ...defaultStyle, background: "darkgray" };
@@ -60,7 +61,7 @@
       },
       cellDataText(state) {
         return (row, cell) => {
-          switch (this.$store.state.table[row][cell]) {
+          switch (this.table[row][cell]) {
             case CODE.NORMAL:
               return "";
             case CODE.MINE:
@@ -74,16 +75,25 @@
             case CODE.QUESTION_MINE:
               return "?";
             default:
-              return "";
+              return this.table[row][cell] || "";
           }
         };
       },
     },
     methods: {
       clickCell(row, cell) {
-        this.$store.commit(OPEN_CELL, { row, cell });
+        if (this.halted) return;
+        switch (this.table[row][cell]) {
+          case CODE.NORMAL:
+            return this.$store.commit(OPEN_CELL, { row, cell });
+          case CODE.MINE:
+            return this.$store.commit(CLICK_MINE, { row, cell });
+          default:
+            return;
+        }
       },
       rightClickCell(row, cell) {
+        if (this.halted) return;
         switch (this.table[row][cell]) {
           case CODE.NORMAL:
           case CODE.MINE:
@@ -98,7 +108,6 @@
             this.$store.commit(NORMALIZE_CELL, { row, cell });
             return;
           default:
-            console.log("clicked");
             return;
         }
       },

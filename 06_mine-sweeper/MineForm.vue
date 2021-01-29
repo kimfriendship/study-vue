@@ -12,8 +12,8 @@
   export default {
     data() {
       return {
-        row: 5,
-        cell: 5,
+        row: 8,
+        cell: 8,
         mine: 10,
       };
     },
@@ -24,7 +24,6 @@
           cell: this.cell,
           mine: this.mine,
         });
-        this.$store.state.halted = false;
       },
     },
   };
