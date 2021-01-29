@@ -69,6 +69,7 @@ export default new Vuex.Store({
       state.data = { row, cell, mine };
       state.table = plantMine(row, cell, mine);
       state.halted = false;
+      state.result = "";
     },
     [OPEN_CELL](state, { row, cell }) {
       const checked = [];
