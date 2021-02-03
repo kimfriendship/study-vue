@@ -16,7 +16,7 @@
     },
     methods: {
       onClick() {
-        this.planet.count++;
+        this.$emit("increase");
       },
     },
   };

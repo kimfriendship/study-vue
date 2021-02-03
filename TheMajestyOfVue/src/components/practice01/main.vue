@@ -4,7 +4,10 @@
     <ul>
       <li v-for="(planet, i) in planets" :key="i">
         Planet: {{ planet.name }} Visited {{ planet.count }} time(s).
-        <visit-button :planet="planet"></visit-button>
+        <visit-button
+          :planet="planet"
+          @increase="increaseVisit(planet.name)"
+        ></visit-button>
       </li>
     </ul>
   </section>
@@ -26,6 +29,16 @@
           { name: "Jupiter", count: 0 },
         ],
       };
+    },
+    methods: {
+      increaseVisit(planetName) {
+        const newPlanets = this.planets.map((planet) =>
+          planet.name === planetName
+            ? { ...planet, count: planet.count + 1 }
+            : planet
+        );
+        this.planets = newPlanets;
+      },
     },
   };
 </script>
