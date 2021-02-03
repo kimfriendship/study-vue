@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <h2>Where would you like to go?</h2>
     <ul>
       <li v-for="(planet, i) in planets" :key="i">
@@ -7,7 +7,7 @@
         <visit-button :planet="planet"></visit-button>
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>
