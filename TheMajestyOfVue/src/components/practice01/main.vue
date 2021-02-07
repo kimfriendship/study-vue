@@ -1,22 +1,20 @@
 <template>
-  <div>
+  <section>
     <h2>Where would you like to go?</h2>
     <ul>
-      <li
-        v-for="(planet, i) in planets"
-        :key="i"
-        @click="increaseVisitCount(planet.name)"
-      >
+      <li v-for="(planet, i) in planets" :key="i">
         Planet: {{ planet.name }} Visited {{ planet.count }} time(s).
-        <visit-button :count="planet.count"></visit-button>
+        <visit-button
+          :planet="planet"
+          @increase="increaseVisit(planet.name)"
+        ></visit-button>
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>
   import VisitButton from "./VisitButton";
-  import Vue from "vue";
 
   export default {
     components: {
@@ -33,13 +31,13 @@
       };
     },
     methods: {
-      increaseVisitCount(planetName) {
-        const planet = this.planets.filter(
-          ({ name }) => name === planetName
-        )[0];
-        const count = planet.count + 1;
-        if (count > 3) return;
-        return Vue.set(planet, "count", count);
+      increaseVisit(planetName) {
+        const newPlanets = this.planets.map((planet) =>
+          planet.name === planetName
+            ? { ...planet, count: planet.count + 1 }
+            : planet
+        );
+        this.planets = newPlanets;
       },
     },
   };

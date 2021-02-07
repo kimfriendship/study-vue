@@ -5,18 +5,18 @@
 <script>
   export default {
     props: {
-      count: {
-        type: Number,
+      planet: {
+        type: Object,
       },
     },
     computed: {
       showButton() {
-        return this.count < 3;
+        return this.planet.count < 3;
       },
     },
     methods: {
       onClick() {
-        this.$emit("click");
+        this.$emit("increase");
       },
     },
   };
