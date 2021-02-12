@@ -2,6 +2,7 @@
   <div id="app">
     <!-- <Header /> -->
     <CustomIcon :src="Icon" alt="icon" class="icon" />
+    <ChangeIcon />
     <TodoApp />
     <!-- <div id="content" class="content">
       <router-view></router-view>
@@ -13,6 +14,7 @@
   // import Header from "./components/Header.vue";
   import TodoApp from "./Views/TodoApp";
   import CustomIcon from "./components/CustomIcon";
+  import ChangeIcon from "./components/ChangeIcon";
   import Icon from "./assets/icon.svg";
 
   export default {
@@ -21,6 +23,7 @@
       // Header,
       TodoApp,
       CustomIcon,
+      ChangeIcon,
     },
     data() {
       return {
@@ -30,8 +33,4 @@
   };
 </script>
 
-<style scoped>
-  .icon path {
-    fill: red;
-  }
-</style>
+<style scoped></style>
