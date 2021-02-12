@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- <Header /> -->
-    <CustomIcon :src="Icon" alt="icon" class="icon" />
+    <CustomIcon src="./assets/icon.svg" alt="icon" />
+    <ExchangeIcon />
     <ChangeIcon />
     <TodoApp />
     <!-- <div id="content" class="content">
@@ -15,7 +16,7 @@
   import TodoApp from "./Views/TodoApp";
   import CustomIcon from "./components/CustomIcon";
   import ChangeIcon from "./components/ChangeIcon";
-  import Icon from "./assets/icon.svg";
+  import ExchangeIcon from "./assets/icon.svg";
 
   export default {
     name: "App",
@@ -24,10 +25,11 @@
       TodoApp,
       CustomIcon,
       ChangeIcon,
+      ExchangeIcon,
     },
     data() {
       return {
-        Icon,
+        ExchangeIcon,
       };
     },
   };
