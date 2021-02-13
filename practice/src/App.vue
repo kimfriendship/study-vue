@@ -8,6 +8,22 @@
     <!-- <div id="content" class="content">
       <router-view></router-view>
     </div> -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-1" style="height: 50px">hello</div>
+        <div class="col-1 mr-auto" style="height: 300px">how are you</div>
+        <div class="col-1" style="height: 80px">what's your name</div>
+      </div>
+      <div class="row">
+        <div class="col-1 align-self-center" style="height: 50px">hello</div>
+        <div class="col-3 order-last " style="height: 300px">
+          how are you
+        </div>
+        <div class="col-1 align-self-end" style="height: 80px">
+          what's your name
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,4 +51,9 @@
   };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .row div {
+    background: lavender;
+    border: 1px solid darkcyan;
+  }
+</style>
