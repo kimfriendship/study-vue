@@ -1,13 +1,16 @@
 <template>
   <div id="app">
+    <GrandParent />
   </div>
 </template>
 
 <script>
+import GrandParent from './components/GrandParent.vue'
 
 export default {
   name: "App",
   components: {
+    GrandParent
   },
 }
 </script>
