@@ -35,10 +35,10 @@
         this.$emit("resolve", "Confirmed!");
       },
       clickError() {
-        this.$emit("reject");
+        this.$emit("reject", "Error!");
       },
       clickClose() {
-        this.$emit("resolve");
+        this.$emit("resolve", "Closed!");
       },
     },
   };
@@ -61,7 +61,7 @@
   }
 
   .btn {
-    background: lightslategrey;
+    background: cornflowerblue;
     color: white;
   }
 </style>

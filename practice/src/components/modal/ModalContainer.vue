@@ -1,12 +1,12 @@
 <template>
   <div>
     <component
-      v-for="{ id, comp, options, resolve, reject } in modalList"
+      v-for="{ id, comp, options } in modalList"
       :key="id"
       :is="comp"
       :options="options"
-      @resolve="(res) => resolve(res)"
-      @reject="reject"
+      @resolve="(res) => resolve(id, res)"
+      @reject="(err) => reject(id, err)"
     />
   </div>
 </template>
@@ -31,8 +31,19 @@
           });
         });
       },
+      close(id) {
+        this.modalList = this.modalList.filter((modal) => modal.id !== id);
+      },
+      resolve(id, res) {
+        console.log("===resolve===");
+        this.modalList.find((modal) => modal.id === id).resolve(res);
+        this.close(id);
+      },
+      reject(id, err) {
+        console.log("===reject===");
+        this.modalList.find((modal) => modal.id === id).reject(err);
+        this.close(id);
+      },
     },
   };
 </script>
-
-<style></style>

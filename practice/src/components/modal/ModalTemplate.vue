@@ -1,14 +1,21 @@
 <template>
   <div>
+    <div v-if="!disableDim" class="dimmed"></div>
     <div class="content">
       <slot></slot>
     </div>
-    <div class="dimmed"></div>
   </div>
 </template>
 
 <script>
-  export default {};
+  export default {
+    props: {
+      disableDim: {
+        type: Boolean,
+        default: false,
+      },
+    },
+  };
 </script>
 
 <style scoped>
@@ -19,7 +26,7 @@
     width: 100vw;
     height: 100vh;
     background: black;
-    opacity: 0.7;
+    opacity: 0.6;
   }
 
   .content {
@@ -28,7 +35,6 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
