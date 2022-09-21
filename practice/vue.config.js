@@ -1,3 +1,6 @@
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
+
 module.exports = {
   devServer: {
     overlay: {
@@ -15,5 +18,14 @@ module.exports = {
       .end()
       .use("vue-svg-loader")
       .loader("vue-svg-loader");
+  },
+  configureWebpack: {
+    plugins: [
+      new BundleAnalyzerPlugin({
+        analyzerMode: "static",
+        reportFilename: `report-${new Date().getTime()}.html`,
+        generateStatsFile: true,
+      }),
+    ],
   },
 };
