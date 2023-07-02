@@ -1,5 +1,5 @@
 <template>
-  <svg :class="svgClass" aria-hidden="true">
+  <svg class="icon" aria-hidden="true">
     <use :xlink:href="name"></use>
   </svg>
 </template>
@@ -41,13 +41,13 @@
 </script>
 
 <style>
-  .svg-icon {
+  .icon {
     display: block;
-    width: 1em;
-    height: 1em;
-    fill: currentColor; /* important */
-    overflow: hidden;
-    background: lightblue;
     margin: 1rem;
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+    color: grey;
+    fill: currentColor;
   }
 </style>

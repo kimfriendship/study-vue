@@ -2,9 +2,16 @@
   <main>
     <h1>ICONS TEST</h1>
     <section>
-      <svg-icon icon-name="folder"></svg-icon>
-      <svg-icon icon-name="check"></svg-icon>
-      <svg-icon icon-name="twitter"></svg-icon>
+      <span>folder</span>
+      <svg-icon icon-name="folder" class="folder"></svg-icon>
+      <span>check</span>
+      <svg-icon icon-name="check" class="check"></svg-icon>
+      <span>twitter</span>
+      <svg-icon icon-name="twitter" class="twitter"></svg-icon>
+      <span>add</span>
+      <svg-icon icon-name="zip" class="twitter"></svg-icon>
+      <span>excel</span>
+      <svg-icon icon-name="excel" class="excel"></svg-icon>
 
       <!-- <Pdfjs /> -->
       <!-- <LottieWebVue
@@ -35,10 +42,23 @@
   };
 </script>
 
-<style scoped>
+<style>
   #app {
     position: relative;
     width: 100%;
     height: 100%;
+  }
+
+  .folder {
+    color: green;
+  }
+  .check {
+    color: red;
+  }
+  .twitter {
+    fill: blue;
+  }
+  .excel {
+    color: pink;
   }
 </style>

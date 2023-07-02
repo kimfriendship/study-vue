@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+<symbol id="credit_card" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M4 11.5H3.5V12V18V18.5H4H20H20.5V18V12V11.5H20H4ZM4 5.5H3.5V6V8V8.5H4H20H20.5V8V6V5.5H20H4ZM20 19.5H4C3.17157 19.5 2.5 18.8284 2.5 18V6C2.5 5.17157 3.17157 4.5 4 4.5H20C20.8284 4.5 21.5 5.17157 21.5 6V18C21.5 18.8284 20.8284 19.5 20 19.5ZM12.5 15.5H6.5V14.5H12.5V15.5Z" fill="#838383" stroke="#838383"/>
+</symbol>
+
+<symbol id="add" width="10" height="10" viewBox="0 0 10 10" fill="none">
+<path d="M6 6V10H4V6H0V4H4V0H6V4H10V6H6Z" fill="#838383"/>
+</symbol>
+
+<symbol id="arrow-dropdown-up-primary" width="16" height="17" viewBox="0 0 16 17" fill="none">
+<path d="M11.3335 9.8335L8.00016 6.50016L4.66683 9.8335L11.3335 9.8335Z" fill="#FF8400"/>
+</symbol>
+
+<symbol id="arrow-medium-right" width="6" height="10" viewBox="0 0 6 10" fill="none">
+<path d="M5.53907 5.38411C5.77894 5.18421 5.77894 4.81579 5.53907 4.61589L0.82009 0.68341C0.494427 0.412023 -8.17962e-07 0.643603 -7.80902e-07 1.06752L-9.33256e-08 8.93248C-5.62655e-08 9.3564 0.494429 9.58798 0.820092 9.31659L5.53907 5.38411Z" fill="#606060"/>
+</symbol>
+
+<symbol id="back" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="12" cy="12" r="11" fill="#000"/>
+        <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 6L7 12 15 18"/>
+    </g>
+</symbol>
+
+</svg>
