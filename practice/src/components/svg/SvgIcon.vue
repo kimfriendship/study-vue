@@ -8,7 +8,7 @@
   // https://webpack.js.org/guides/dependency-management/#context-module-api
   const requireAll = (requireContext) =>
     requireContext.keys().map(requireContext);
-  const req = require.context("../../svg-icons", false, /\.svg$/);
+  const req = require.context("../../icons", false, /\.svg$/);
   requireAll(req);
 
   export default {
@@ -42,9 +42,12 @@
 
 <style>
   .svg-icon {
+    display: block;
     width: 1em;
     height: 1em;
     fill: currentColor; /* important */
     overflow: hidden;
+    background: lightblue;
+    margin: 1rem;
   }
 </style>
