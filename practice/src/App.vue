@@ -2,9 +2,10 @@
   <main>
     <h1>ICONS TEST</h1>
     <section>
-      <div>
-        <svg-icon icon-name="check"></svg-icon>
-      </div>
+      <svg-icon icon-name="folder"></svg-icon>
+      <svg-icon icon-name="check"></svg-icon>
+      <svg-icon icon-name="twitter"></svg-icon>
+
       <!-- <Pdfjs /> -->
       <!-- <LottieWebVue
         auto-play

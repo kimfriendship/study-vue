@@ -11,7 +11,7 @@ module.exports = {
     },
   },
   chainWebpack: (config) => {
-    // config.module.rule("svg").uses.clear();
+    config.module.rule("svg").uses.clear();
     // config.module
     //   .rule("svg")
     //   .use("babel-loader")
@@ -19,12 +19,13 @@ module.exports = {
     //   .end();
     // config.module
     //   .rule("svg")
-    //   .exclude.add(resolve("src/svg-icons"))
+    //   .exclude.add(resolve("src/icons"))
     //   .end();
+
     config.module
       .rule("svg")
       .test(/\.svg$/)
-      .include.add(resolve("src/svg-icons"))
+      .include.add(resolve("src/icons"))
       .end()
       .use("svg-sprite-loader")
       .loader("svg-sprite-loader")
@@ -82,7 +83,12 @@ module.exports = {
       //   reportFilename: `report-${new Date().getTime()}.html`,
       //   generateStatsFile: true,
       // }),
-      new SpriteLoaderPlugin(),
+      // new SpriteLoaderPlugin({
+      //   plainSprite: true,
+      //   spriteAttrs: {
+      //     id: "my-custom-sprite-id",
+      //   },
+      // }),
     ],
   },
 };
